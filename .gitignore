@@ -43,3 +43,4 @@ Thumbs.db
 
 #ignore
 ./Data/*
+*.env
