@@ -4,7 +4,7 @@ const connectDB = require('./database');
 
 class Server {
     constructor() {
-        this.port = process.env.PORT; // define port where server will run
+        this.port = process.env.PORT || 8080; // define port where server will run
         this.app = express(); //instance of express
         this.corsOptions = { //cors options to restrict access to the server
             origin: [
@@ -17,8 +17,8 @@ class Server {
         this.drinksPath = "/api/drinks";
 
 
+        this.middlewares(); //before routes
         this.routes();
-        this.middlewares();
         connectDB();
     }
 

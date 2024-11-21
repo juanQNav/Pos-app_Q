@@ -6,7 +6,7 @@ const getAllDrinks = async (req = request, res = response) => {
 
 
     try {
-        const result = await drinksRespository.getAll({ Producto: RegExp(searchTerm) });
+        const result = await drinksRespository.getAll({ name: RegExp(searchTerm) });
         res.status(200).json(result);
     } catch (error) {
         console.log(error);
