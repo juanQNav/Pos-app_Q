@@ -15,6 +15,7 @@ class Server {
         //input paths
         this.usersPath = "/api/users";
         this.drinksPath = "/api/drinks";
+        this.authPath = "/api/auth";
 
 
         this.middlewares(); //before routes
@@ -27,6 +28,7 @@ class Server {
         //main routes
         this.app.use(this.drinksPath, require('../routes/drinks'));
         this.app.use(this.usersPath, require('../routes/users'));
+        this.app.use(this.authPath, require('../routes/auth'));
 
         //errors
         this.app.get('*', function (req, res) {
@@ -45,7 +47,10 @@ class Server {
     }
 
     //middlewares to use in the server
-    middlewares() { this.app.use(cors(this.corsOptions)); }
+    middlewares() {
+        this.app.use(cors(this.corsOptions));
+        this.app.use(express.json());
+    }
 
     //start server
     listen() {
