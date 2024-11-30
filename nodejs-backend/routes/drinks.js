@@ -2,16 +2,17 @@ const { Router } = require("express");
 const { Server } = require("http");
 const { getAllDrinks, createNewDrink, getDrinkById, deleteDrinkById, updateDrinkById } = require("../controllers/drinks");
 const { create } = require("domain");
+const { validateJWT } = require("../middlewares/verifyJWT");
 const router = Router();
 
-router.get("/", getAllDrinks);
+router.get("/", [validateJWT], getAllDrinks);
 
-router.get("/:id", getDrinkById)
+router.get("/:id", [validateJWT], getDrinkById)
 
-router.post("/", createNewDrink);
+router.post("/", [validateJWT], createNewDrink);
 
-router.delete("/:id", deleteDrinkById);
+router.delete("/:id", [validateJWT], deleteDrinkById);
 
-router.put("/:id", updateDrinkById);
+router.put("/:id", [validateJWT], updateDrinkById);
 
 module.exports = router;
