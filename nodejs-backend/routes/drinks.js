@@ -3,11 +3,12 @@ const { Server } = require("http");
 const { getAllDrinks, createNewDrink, getDrinkById, deleteDrinkById, updateDrinkById } = require("../controllers/drinks");
 const { create } = require("domain");
 const { validateJWT } = require("../middlewares/verifyJWT");
+const { verifyAdminRole } = require("../middlewares/verifyAdminRole");
 const router = Router();
 
 router.get("/", [validateJWT], getAllDrinks);
 
-router.get("/:id", [validateJWT], getDrinkById)
+router.get("/:id", [validateJWT, verifyAdminRole], getDrinkById)
 
 router.post("/", [validateJWT], createNewDrink);
 

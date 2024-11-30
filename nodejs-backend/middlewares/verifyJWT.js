@@ -19,6 +19,7 @@ const validateJWT = async (req = request, res = response, next) => {
                 message: "Invalid token"
             })
         } else {
+            req.userActive = user;
             next();
         }
     } catch (error) {
