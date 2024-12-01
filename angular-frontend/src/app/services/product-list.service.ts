@@ -1,12 +1,14 @@
 import { inject, Injectable } from '@angular/core';
 import { Product } from '../interfaces/product.interface';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductListService {
   private http = inject(HttpClient);
+  private authService = inject(AuthService);
   private apiUrl = "http://localhost:8080/api/drinks/";
   private _products: Product[] = [];
 
@@ -22,7 +24,7 @@ export class ProductListService {
   public fetchProducts() {
     this.http.get<Product[]>(this.apiUrl, {
       headers: {
-        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXI5IiwiaWF0IjoxNzMzMDE2NjMzLCJleHAiOjE3MzMwMzEwMzN9.9eQYk7zKYFAl_8cbbcSpXBGDS9rjuwCCHjV7VTV82MU",
+        "Authorization": this.authService.getToken(),
       }
     }).subscribe(
       {

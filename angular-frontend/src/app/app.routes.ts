@@ -6,13 +6,16 @@ import { DrawerComponent } from './components/drawer/drawer.component';
 import { SaleComponent } from './components/views/sale/sale.component';
 import { InventoryComponent } from './components/views/inventory/inventory.component';
 import { AccountComponent } from './components/views/account/account.component';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-     {path: "login", component: LoginComponent},
-     {path: "drawer", component: DrawerComponent,
+     { path: "login", component: LoginComponent },
+     {
+          path: "drawer", component: DrawerComponent,
+          canActivate: [AuthGuard], // Protects the DrawerComponent route
           children: [
                {
-                    path: "home", 
+                    path: "home",
                     component: HomeComponent
                },
                {
@@ -29,7 +32,7 @@ export const routes: Routes = [
                }
           ]
      },
-     {path: "", redirectTo: "login", pathMatch: "full"},
-     {path: "not-found", component: NotFoundComponent},
-     {path: "**", redirectTo: "not-found", pathMatch: "full"}
+     { path: "", redirectTo: "login", pathMatch: "full" },
+     { path: "not-found", component: NotFoundComponent },
+     { path: "**", redirectTo: "not-found", pathMatch: "full" }
 ];
