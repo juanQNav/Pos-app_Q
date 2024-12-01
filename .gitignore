@@ -1,4 +1,5 @@
 #ignore cust
 /data/*pdf
 /data/*xlsx
-
+/data/*png
+/data/*csv
