@@ -3,11 +3,9 @@
         <img src="{{product.image}}" alt="{{product.name}}" class="w-full h-full object-center group-hover:opacity-75">
     </div>
     <div>
-        <h3 class="text-center font-medium text-gray-700">{{product.name}}</h3>
-        <p class="text-center font-medium text-gray-900">precio: $ {{product.price}}</p>
-        <p class="text-center font-medium text-gray-900">volumen: {{product.volume}}</p>
-        <p class="text-center font-medium text-gray-900">contenedor: {{product.container}}</p>
-        <p class="text-center font-medium text-gray-900">material: {{product.material}}</p>
+        <h3 class="text-center font-medium text-gray-700">{{product.name}} {{product.volume}} {{product.container}}
+            {{product.material}}</h3>
+        <p class="text-center font-medium text-gray-400">precio: $ {{product.price}}</p>
     </div>
     @if(showAddButton === true){
     <div class="flex justify-center mt-4">
