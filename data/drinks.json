@@ -4,7 +4,7 @@
     "name": "ADES Frutal Mango",
     "price": 12,
     "volume": "200 ML",
-    "image": "",
+    "image": "images/products/ADES-Frutal-Mango-200-ML-NR-TPK.png",
     "container": "NR",
     "material": "TPK"
   },
@@ -13,7 +13,7 @@
     "name": "Agua Ciel",
     "price": 16,
     "volume": "1L",
-    "image": "",
+    "image": "images/products/Agua-Ciel-1L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -22,7 +22,7 @@
     "name": "Agua Ciel",
     "price": 13,
     "volume": "600ml",
-    "image": "",
+    "image": "images/products/Agua-Ciel-600ml-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -31,7 +31,7 @@
     "name": "Agua Lourdes",
     "price": 20,
     "volume": "",
-    "image": "",
+    "image": "images/products/Agua-Lourdes-NR-VID.png",
     "container": "NR",
     "material": "VID"
   },
@@ -40,7 +40,7 @@
     "name": "Boing",
     "price": 17,
     "volume": "500ml",
-    "image": "",
+    "image": "images/products/Boing-500ml-NR-TETRA.png",
     "container": "NR",
     "material": "TETRA"
   },
@@ -49,7 +49,7 @@
     "name": "Boing",
     "price": 13,
     "volume": "200ml",
-    "image": "",
+    "image": "images/products/Boing-200ml-NR-TETRA.png",
     "container": "NR",
     "material": "TETRA"
   },
@@ -58,7 +58,7 @@
     "name": "Ciel Agua Purificada",
     "price": 18,
     "volume": "1.5 L",
-    "image": "",
+    "image": "images/products/Ciel-Agua-Purificada-1.5-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -67,7 +67,7 @@
     "name": "Ciel Agua Purificada",
     "price": 16,
     "volume": "1 L",
-    "image": "",
+    "image": "images/products/Ciel-Agua-Purificada-1-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -76,7 +76,7 @@
     "name": "Coca cola Sin Azucar",
     "price": 20,
     "volume": "600 ML",
-    "image": "",
+    "image": "images/products/Coca-cola-Sin-Azucar-600-ML-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -85,7 +85,7 @@
     "name": "Coca-cola",
     "price": 28,
     "volume": "1.25 L",
-    "image": "",
+    "image": "images/products/Coca-cola-1.25-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -94,7 +94,7 @@
     "name": "Coca-cola",
     "price": 13,
     "volume": "250 ML",
-    "image": "",
+    "image": "images/products/Coca-cola-250-ML-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -103,7 +103,7 @@
     "name": "Coca-cola",
     "price": 20,
     "volume": "600 ML",
-    "image": "",
+    "image": "images/products/Coca-cola-600-ML-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -112,7 +112,7 @@
     "name": "Coca-cola",
     "price": 16,
     "volume": "235 ML",
-    "image": "",
+    "image": "images/products/Coca-cola-235-ML-NR-VID.png",
     "container": "NR",
     "material": "VID"
   },
@@ -121,7 +121,7 @@
     "name": "Coca-cola",
     "price": 16,
     "volume": "400 ML",
-    "image": "",
+    "image": "images/products/Coca-cola-400-ML-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -130,7 +130,7 @@
     "name": "Coca-cola",
     "price": 20,
     "volume": "355 ML",
-    "image": "",
+    "image": "images/products/Coca-cola-355-ML-NR-LAT.png",
     "container": "NR",
     "material": "LAT"
   },
@@ -139,7 +139,7 @@
     "name": "Coca-cola",
     "price": 45,
     "volume": "2.50 L",
-    "image": "",
+    "image": "images/products/Coca-cola-2.50-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -148,7 +148,7 @@
     "name": "Del Valle Durazno",
     "price": 32,
     "volume": "1 L",
-    "image": "",
+    "image": "images/products/Del-Valle-Durazno-1-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -157,7 +157,7 @@
     "name": "Del Valle Durazno",
     "price": 17,
     "volume": "250 ML",
-    "image": "",
+    "image": "images/products/Del-Valle-Durazno-250-ML-NR-TPK.png",
     "container": "NR",
     "material": "TPK"
   },
@@ -166,7 +166,7 @@
     "name": "Del Valle Fizz NJA",
     "price": 26,
     "volume": "2 L",
-    "image": "",
+    "image": "images/products/Del-Valle-Fizz-NJA-2-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -175,7 +175,7 @@
     "name": "Del Valle Mango",
     "price": 17,
     "volume": "250 ML",
-    "image": "",
+    "image": "images/products/Del-Valle-Mango-250-ML-NR-TPK.png",
     "container": "NR",
     "material": "TPK"
   },
@@ -184,7 +184,7 @@
     "name": "Del Valle Mango",
     "price": 20,
     "volume": "413 ML",
-    "image": "",
+    "image": "images/products/Del-Valle-Mango-413-ML-NR-VID.png",
     "container": "NR",
     "material": "VID"
   },
@@ -193,7 +193,7 @@
     "name": "Del Valle Manzana",
     "price": 17,
     "volume": "250 ML",
-    "image": "",
+    "image": "images/products/Del-Valle-Manzana-250-ML-NR-TPK.png",
     "container": "NR",
     "material": "TPK"
   },
@@ -202,7 +202,7 @@
     "name": "Del Valle NC Manzana",
     "price": 20,
     "volume": "413 ML",
-    "image": "",
+    "image": "images/products/Del-Valle-NC-Manzana-413-ML-NR-VID.png",
     "container": "NR",
     "material": "VID"
   },
@@ -211,7 +211,7 @@
     "name": "Del Valle NC Manzana",
     "price": 17,
     "volume": "250 ML",
-    "image": "",
+    "image": "images/products/Del-Valle-NC-Manzana-250-ML-NR-TPK.png",
     "container": "NR",
     "material": "TPK"
   },
@@ -220,7 +220,7 @@
     "name": "Delaware Punch UVA",
     "price": 19,
     "volume": "600 ML",
-    "image": "",
+    "image": "images/products/Delaware-Punch-UVA-600-ML-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -229,7 +229,7 @@
     "name": "Fanta",
     "price": 29,
     "volume": "1.5 L",
-    "image": "",
+    "image": "images/products/Fanta-1.5-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -238,7 +238,7 @@
     "name": "Fanta Naranja",
     "price": 19,
     "volume": "600 ML",
-    "image": "",
+    "image": "images/products/Fanta-Naranja-600-ML-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -247,7 +247,7 @@
     "name": "Fantas Fresa",
     "price": 42,
     "volume": "2.5 L",
-    "image": "",
+    "image": "images/products/Fantas-Fresa-2.5-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -256,7 +256,7 @@
     "name": "Flashlyte Uva",
     "price": 24,
     "volume": "625 ML",
-    "image": "",
+    "image": "images/products/Flashlyte-Uva-625-ML-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -265,7 +265,7 @@
     "name": "Fresca",
     "price": 29,
     "volume": "1.5 L",
-    "image": "",
+    "image": "images/products/Fresca-1.5-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -274,25 +274,25 @@
     "name": "Fresca",
     "price": 42,
     "volume": "2.5 L",
-    "image": "",
+    "image": "images/products/Fresca-2.5-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
   {
     "id": 32,
-    "name": "Fresca Fusión",
+    "name": "Fresca Fusi\u00f3n",
     "price": 31,
     "volume": "2 L",
-    "image": "",
+    "image": "images/products/Fresca-Fusi\u00f3n-2-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
   {
     "id": 33,
-    "name": "Fresca Fusión",
+    "name": "Fresca Fusi\u00f3n",
     "price": 19,
     "volume": "600 ML",
-    "image": "",
+    "image": "images/products/Fresca-Fusi\u00f3n-600-ML-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -301,7 +301,7 @@
     "name": "Fuze Tea Durazno",
     "price": 20,
     "volume": "600 ML",
-    "image": "",
+    "image": "images/products/Fuze-Tea-Durazno-600-ML-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -310,7 +310,7 @@
     "name": "Fuze Tea Verde LIM",
     "price": 10,
     "volume": "600 ML",
-    "image": "",
+    "image": "images/products/Fuze-Tea-Verde-LIM-600-ML-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -319,7 +319,7 @@
     "name": "Jugos Jumex",
     "price": 18,
     "volume": "413ml",
-    "image": "",
+    "image": "images/products/Jugos-Jumex-413ml-NR-TETRA.png",
     "container": "NR",
     "material": "TETRA"
   },
@@ -328,7 +328,7 @@
     "name": "Jugos Jumex",
     "price": 14,
     "volume": "237ml",
-    "image": "",
+    "image": "images/products/Jugos-Jumex-237ml-NR-TETRA.png",
     "container": "NR",
     "material": "TETRA"
   },
@@ -337,7 +337,7 @@
     "name": "Jugos Jumex Tetra",
     "price": 28,
     "volume": "960ml",
-    "image": "",
+    "image": "images/products/Jugos-Jumex-Tetra-960ml-NR-TETRA.png",
     "container": "NR",
     "material": "TETRA"
   },
@@ -346,7 +346,7 @@
     "name": "Monster Energy Ori",
     "price": 45,
     "volume": "473 ML",
-    "image": "",
+    "image": "images/products/Monster-Energy-Ori-473-ML-NR-LAT.png",
     "container": "NR",
     "material": "LAT"
   },
@@ -355,16 +355,16 @@
     "name": "Powerade Fruta Roja",
     "price": 24,
     "volume": "600 ML",
-    "image": "",
+    "image": "images/products/Powerade-Fruta-Roja-600-ML-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
   {
     "id": 41,
-    "name": "Powerade Lima Limón",
+    "name": "Powerade Lima Lim\u00f3n",
     "price": 33,
     "volume": "1 L",
-    "image": "",
+    "image": "images/products/Powerade-Lima-Lim\u00f3n-1-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -373,7 +373,7 @@
     "name": "Powerade Moras",
     "price": 33,
     "volume": "1 L",
-    "image": "",
+    "image": "images/products/Powerade-Moras-1-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -382,7 +382,7 @@
     "name": "Predator Energy OR",
     "price": 20,
     "volume": "473 ML",
-    "image": "",
+    "image": "images/products/Predator-Energy-OR-473-ML-NR-LAT.png",
     "container": "NR",
     "material": "LAT"
   },
@@ -391,7 +391,7 @@
     "name": "Sangria Señorial",
     "price": 19,
     "volume": "",
-    "image": "",
+    "image": "images/products/Sangria-Señorial-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -400,7 +400,7 @@
     "name": "Santa Clara Leche Cappucino",
     "price": 16,
     "volume": "180 ML",
-    "image": "",
+    "image": "images/products/Santa-Clara-Leche-Cappucino-180-ML-NR-TPK.png",
     "container": "NR",
     "material": "TPK"
   },
@@ -409,7 +409,7 @@
     "name": "Santa Clara Leche Chocolate",
     "price": 16,
     "volume": "180 ML",
-    "image": "",
+    "image": "images/products/Santa-Clara-Leche-Chocolate-180-ML-NR-TPK.png",
     "container": "NR",
     "material": "TPK"
   },
@@ -418,7 +418,7 @@
     "name": "Santa Clara Leche Entera",
     "price": 29,
     "volume": "1 L",
-    "image": "",
+    "image": "images/products/Santa-Clara-Leche-Entera-1-L-NR-TPK.png",
     "container": "NR",
     "material": "TPK"
   },
@@ -427,7 +427,7 @@
     "name": "Santa Clara Leche Fresa",
     "price": 16,
     "volume": "180 ML",
-    "image": "",
+    "image": "images/products/Santa-Clara-Leche-Fresa-180-ML-NR-TPK.png",
     "container": "NR",
     "material": "TPK"
   },
@@ -436,7 +436,7 @@
     "name": "Sidral Mundet",
     "price": 29,
     "volume": "1.5 L",
-    "image": "",
+    "image": "images/products/Sidral-Mundet-1.5-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -445,7 +445,7 @@
     "name": "Sidral Mundet",
     "price": 42,
     "volume": "2.5 L",
-    "image": "",
+    "image": "images/products/Sidral-Mundet-2.5-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -454,7 +454,7 @@
     "name": "Sprite",
     "price": 29,
     "volume": "1.5 L",
-    "image": "",
+    "image": "images/products/Sprite-1.5-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -463,7 +463,7 @@
     "name": "Sprite",
     "price": 19,
     "volume": "600 ML",
-    "image": "",
+    "image": "images/products/Sprite-600-ML-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -472,7 +472,7 @@
     "name": "Sprite",
     "price": 42,
     "volume": "2.5 L",
-    "image": "",
+    "image": "images/products/Sprite-2.5-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -481,7 +481,7 @@
     "name": "Squirt",
     "price": 32,
     "volume": "2L",
-    "image": "",
+    "image": "images/products/Squirt-2L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -490,7 +490,7 @@
     "name": "Suero Electrolit",
     "price": 24,
     "volume": "",
-    "image": "",
+    "image": "images/products/Suero-Electrolit-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -499,16 +499,16 @@
     "name": "Topo chico Agua Mineral",
     "price": 20,
     "volume": "600 ML",
-    "image": "",
+    "image": "images/products/Topo-chico-Agua-Mineral-600-ML-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
   {
     "id": 57,
-    "name": "Topo chico TWIST Limón",
+    "name": "Topo chico TWIST Lim\u00f3n",
     "price": 20,
     "volume": "600 ML",
-    "image": "",
+    "image": "images/products/Topo-chico-TWIST-Lim\u00f3n-600-ML-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -517,7 +517,7 @@
     "name": "Valle Frut Citrus",
     "price": 23,
     "volume": "1 L",
-    "image": "",
+    "image": "images/products/Valle-Frut-Citrus-1-L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -526,7 +526,7 @@
     "name": "Valle Frut Citrus",
     "price": 32,
     "volume": "2L",
-    "image": "",
+    "image": "images/products/Valle-Frut-Citrus-2L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -535,7 +535,7 @@
     "name": "Coca-cola",
     "price": 36,
     "volume": "2.50 L",
-    "image": "",
+    "image": "images/products/Coca-cola-2.50-L-RT-PET.png",
     "container": "RT",
     "material": "PET"
   },
@@ -544,7 +544,7 @@
     "name": "Coca-cola",
     "price": 18,
     "volume": "1 L",
-    "image": "",
+    "image": "images/products/Coca-cola-1-L-RT-VID.png",
     "container": "RT",
     "material": "VID"
   },
@@ -553,7 +553,7 @@
     "name": "Coca-cola",
     "price": 14,
     "volume": "500 ML",
-    "image": "",
+    "image": "images/products/Coca-cola-500-ML-RT-VID.png",
     "container": "RT",
     "material": "VID"
   },
@@ -562,7 +562,7 @@
     "name": "Coca-cola",
     "price": 22,
     "volume": "1.50 L",
-    "image": "",
+    "image": "images/products/Coca-cola-1.50-L-RT-PET.png",
     "container": "RT",
     "material": "PET"
   },
@@ -571,7 +571,7 @@
     "name": "Pepsi",
     "price": 38,
     "volume": "2.5L",
-    "image": "",
+    "image": "images/products/Pepsi-2.5L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -580,7 +580,7 @@
     "name": "Pepsi",
     "price": 23,
     "volume": "1.5L",
-    "image": "",
+    "image": "images/products/Pepsi-1.5L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   },
@@ -589,7 +589,7 @@
     "name": "Pepsi",
     "price": 45,
     "volume": "3L",
-    "image": "",
+    "image": "images/products/Pepsi-3L-NR-PET.png",
     "container": "NR",
     "material": "PET"
   }
