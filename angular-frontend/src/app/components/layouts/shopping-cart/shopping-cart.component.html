@@ -1,51 +1,34 @@
 <div class="h-full flex flex-col">
-  <!-- Sección de lista de productos (ocupa el espacio restante) -->
-  <div class="flex-1 overflow-y-auto overflow-x-hidden"> <!-- Aquí añadimos overflow-x-hidden -->
+  <!-- Section list of products in shopping-cart -->
+  <div class="flex-1 overflow-y-auto overflow-x-hidden">
     <div class="space-y-4">
-      <!-- Producto 1 -->
+      @for(item of products; track item.product.id){
       <div class="flex items-center justify-between p-4 border-b border-gray-200">
-        <img src="https://via.placeholder.com/80" alt="Producto 1" class="w-1/5 h-auto object-cover">
+        <img [src]="item.product.image" alt="Producto" class="w-1/5 h-auto object-cover">
         <div class="flex-1 ml-4">
           <div class="w-16 md:w-32">
-            <p class="font-semibold truncate">Nombre del Producto 1</p>
-            <p class="text-sm text-gray-600">$25.00</p>
+            <p class="font-semibold truncate">{{item.product.name}}</p>
+            <p class="text-sm text-gray-600">$ {{item.product.price}}</p>
+            <div class="flex items-center">
+              <button (click)="decreaseQuantity(item.product.id)" class="px-2 py-1 text-sm bg-gray-300">-</button>
+              <span class="px-2">{{item.quantity}}</span>
+              <button (click)="increaseQuantity(item.product.id)" class="px-2 py-1 text-sm bg-gray-300">+</button>
+            </div>
           </div>
         </div>
-        <button class="w-full text-red-500 hover:text-red-700 text-sm">Eliminar</button> <!-- Botón con tamaño fijo -->
+        <button (click)="deleteElement(item.product.id)"
+          class="w-full text-red-500 hover:text-red-700 text-sm">Eliminar</button>
       </div>
-
-      <!-- Producto 2 -->
-      <div class="flex items-center justify-between p-4 border-b border-gray-200">
-        <img src="https://via.placeholder.com/80" alt="Producto 2" class="w-1/5 h-auto object-cover">
-        <div class="flex-1 ml-4">
-          <div class="w-16 md:w-32">
-            <p class="font-semibold truncate">Nombre del Producto 2</p>
-            <p class="text-sm text-gray-600">$40.00</p>
-          </div>
-        </div>
-        <button class="w-full text-red-500 hover:text-red-700 text-sm">Eliminar</button> <!-- Botón con tamaño fijo -->
-      </div>
-
-      <!-- Producto 3 -->
-      <div class="flex items-center justify-between p-4 border-b border-gray-200">
-        <img src="https://via.placeholder.com/80" alt="Producto 3" class="w-1/5 h-auto object-cover">
-        <div class="flex-1 ml-4">
-          <div class="w-16 md:w-32">
-            <p class="font-semibold truncate">Nombre del Producto 3</p>
-            <p class="text-sm text-gray-600">$15.00</p>
-          </div>
-        </div>
-        <button class="w-full text-red-500 hover:text-red-700 text-sm">Eliminar</button> <!-- Botón con tamaño fijo -->
-      </div>
+      }
 
     </div>
   </div>
 
-  <!-- Sección final con Total y Botón (tamaño fijo de 20%) -->
+  <!-- Section sales summary -->
   <div class="border-t border-gray-200 p-4 space-y-4" style="height: 20%;">
     <div class="flex justify-between">
       <p class="font-semibold">Total</p>
-      <p class="font-semibold text-xl">$80.00</p>
+      <p class="font-semibold text-xl">$ {{ totalPrice() }}</p>
     </div>
     <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
       Confirmar Compra

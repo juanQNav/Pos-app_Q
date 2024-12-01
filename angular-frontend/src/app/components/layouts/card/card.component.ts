@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Product } from '../../../interfaces/product.interface';
+import { ShoppingCartService } from '../../../services/shopping-cart.service';
 
 @Component({
   selector: 'app-card',
@@ -23,8 +24,13 @@ export class CardComponent {
     material: ''
   }
 
+  constructor(private shoppingCartService: ShoppingCartService) { }
+
   public onDeletedCard(): void {
     this.deletedCard.emit(this.product.name);
   }
 
+  public onAddToCart(): void {
+    this.shoppingCartService.addProduct(this.product);
+  }
 }
