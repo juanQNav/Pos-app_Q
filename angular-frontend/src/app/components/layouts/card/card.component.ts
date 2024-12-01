@@ -18,7 +18,9 @@ export class CardComponent {
     name: '',
     price: -1,
     volume: '',
-    image: ''
+    image: '',
+    container: '',
+    material: ''
   }
 
   public onDeletedCard(): void {

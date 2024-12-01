@@ -4,7 +4,10 @@
     </div>
     <div>
         <h3 class="text-center font-medium text-gray-700">{{product.name}}</h3>
-        <p class="text-center font-medium text-gray-900">$ {{product.price}}</p>
+        <p class="text-center font-medium text-gray-900">precio: $ {{product.price}}</p>
+        <p class="text-center font-medium text-gray-900">volumen: {{product.volume}}</p>
+        <p class="text-center font-medium text-gray-900">contenedor: {{product.container}}</p>
+        <p class="text-center font-medium text-gray-900">material: {{product.material}}</p>
     </div>
     @if(showAddButton === true){
     <div class="flex justify-center mt-4">

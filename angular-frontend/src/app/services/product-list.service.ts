@@ -20,7 +20,11 @@ export class ProductListService {
   }
 
   public fetchProducts() {
-    this.http.get<Product[]>(this.apiUrl).subscribe(
+    this.http.get<Product[]>(this.apiUrl, {
+      headers: {
+        "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXI5IiwiaWF0IjoxNzMzMDE2NjMzLCJleHAiOjE3MzMwMzEwMzN9.9eQYk7zKYFAl_8cbbcSpXBGDS9rjuwCCHjV7VTV82MU",
+      }
+    }).subscribe(
       {
         next: (response) => {
           this._products = response;

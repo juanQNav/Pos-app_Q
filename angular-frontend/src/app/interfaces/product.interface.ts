@@ -3,5 +3,7 @@ export interface Product {
     name: string,
     price: number,
     volume: string,
-    image: string
+    image: string,
+    container: string,
+    material: string,
 }
