@@ -1,99 +1,54 @@
-          <div class="flex flex-col h-full bg-white shadow-xl">
-            <div class="flex-1 overflow-y-auto px-6 py-6">
-              <div class="flex items-start justify-between">
-                <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Carrito de Compras</h2>
-              </div>
-              <div class="mt-8">
-                <div class="flow-root">
-                  <ul role="list" class="-my-6 divide-y divide-gray-200">
-                    <li class="flex py-6">
-                      <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                        <img src="images/products/sodas/Coca-Cola-355ml.png" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="h-full w-full object-cover object-center">
-                      </div>
-
-                      <div class="ml-4 flex flex-1 flex-col">
-                        <div>
-                          <div class="flex justify-between text-base font-medium text-gray-900">
-                            <h3>
-                              <a href="#">Coca-cola</a>
-                            </h3>
-                            <p class="ml-4">$19.00</p>
-                          </div>
-                          <p class="mt-1 text-sm text-gray-500">355ml</p>
-                        </div>
-                        <div class="flex flex-1 items-end justify-between text-sm">
-                          <p class="text-gray-500">2</p>
-
-                          <div class="flex">
-                            <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Eliminar</button>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="flex py-6">
-                      <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                        <img src="images/products/sodas/Ciel-Agua-Purificada-1L.png" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." class="h-full w-full object-cover object-center">
-                      </div>
-
-                      <div class="ml-4 flex flex-1 flex-col">
-                        <div>
-                          <div class="flex justify-between text-base font-medium text-gray-900">
-                            <h3>
-                              <a href="#">Ciel Agua Purificada</a>
-                            </h3>
-                            <p class="ml-4">$14.00</p>
-                          </div>
-                          <p class="mt-1 text-sm text-gray-500">1L</p>
-                        </div>
-                        <div class="flex flex-1 items-end justify-between text-sm">
-                          <p class="text-gray-500">4</p>
-
-                          <div class="flex">
-                            <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Eliminar</button>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="flex py-6">
-                      <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                        <img src="images/products/sodas/Ciel-Agua-Purificada-1L.png" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." class="h-full w-full object-cover object-center">
-                      </div>
-
-                      <div class="ml-4 flex flex-1 flex-col">
-                        <div>
-                          <div class="flex justify-between text-base font-medium text-gray-900">
-                            <h3>
-                              <a href="#">Ciel Agua Purificada</a>
-                            </h3>
-                            <p class="ml-4">$14.00</p>
-                          </div>
-                          <p class="mt-1 text-sm text-gray-500">1L</p>
-                        </div>
-                        <div class="flex flex-1 items-end justify-between text-sm">
-                          <p class="text-gray-500">4</p>
-
-                          <div class="flex">
-                            <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Eliminar</button>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-
-                    <!-- More products... -->
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
-              <div class="flex justify-between text-base font-medium text-gray-900">
-                <p>Total</p>
-                <p>$262.00</p>
-              </div>
-              <div class="mt-6">
-                <a  class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Confirmar compra</a>
-              </div>
-              <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
-              </div>
-            </div>
+<div class="h-full flex flex-col">
+  <!-- Sección de lista de productos (ocupa el espacio restante) -->
+  <div class="flex-1 overflow-y-auto overflow-x-hidden"> <!-- Aquí añadimos overflow-x-hidden -->
+    <div class="space-y-4">
+      <!-- Producto 1 -->
+      <div class="flex items-center justify-between p-4 border-b border-gray-200">
+        <img src="https://via.placeholder.com/80" alt="Producto 1" class="w-1/5 h-auto object-cover">
+        <div class="flex-1 ml-4">
+          <div class="w-16 md:w-32">
+            <p class="font-semibold truncate">Nombre del Producto 1</p>
+            <p class="text-sm text-gray-600">$25.00</p>
           </div>
+        </div>
+        <button class="w-full text-red-500 hover:text-red-700 text-sm">Eliminar</button> <!-- Botón con tamaño fijo -->
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="flex items-center justify-between p-4 border-b border-gray-200">
+        <img src="https://via.placeholder.com/80" alt="Producto 2" class="w-1/5 h-auto object-cover">
+        <div class="flex-1 ml-4">
+          <div class="w-16 md:w-32">
+            <p class="font-semibold truncate">Nombre del Producto 2</p>
+            <p class="text-sm text-gray-600">$40.00</p>
+          </div>
+        </div>
+        <button class="w-full text-red-500 hover:text-red-700 text-sm">Eliminar</button> <!-- Botón con tamaño fijo -->
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="flex items-center justify-between p-4 border-b border-gray-200">
+        <img src="https://via.placeholder.com/80" alt="Producto 3" class="w-1/5 h-auto object-cover">
+        <div class="flex-1 ml-4">
+          <div class="w-16 md:w-32">
+            <p class="font-semibold truncate">Nombre del Producto 3</p>
+            <p class="text-sm text-gray-600">$15.00</p>
+          </div>
+        </div>
+        <button class="w-full text-red-500 hover:text-red-700 text-sm">Eliminar</button> <!-- Botón con tamaño fijo -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Sección final con Total y Botón (tamaño fijo de 20%) -->
+  <div class="border-t border-gray-200 p-4 space-y-4" style="height: 20%;">
+    <div class="flex justify-between">
+      <p class="font-semibold">Total</p>
+      <p class="font-semibold text-xl">$80.00</p>
+    </div>
+    <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+      Confirmar Compra
+    </button>
+  </div>
+</div>

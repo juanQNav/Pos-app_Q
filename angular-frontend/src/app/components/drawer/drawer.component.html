@@ -1,8 +1,10 @@
 <div class="flex h-screen">
     <app-side-menu></app-side-menu>
 
-    <main class="flex-1 flex flex-col px-3">
-        <app-header></app-header>
-        <router-outlet></router-outlet>
+    <main class="flex-1 flex flex-col overflow-hidden">
+        <app-header class="sticky top-0 z-10"></app-header>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
     </main>
 </div>
