@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-modal',
+  selector: 'app-modal-payment',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './modal-payment.component.html',

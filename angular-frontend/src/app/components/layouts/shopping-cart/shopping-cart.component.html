@@ -41,5 +41,6 @@
 </div>
 
 <!-- Modal -->
-<app-modal [isOpen]="isModalOpen" [totalPrice]="totalPrice()" [change]="change" [error]="error"
-  (closeModal)="closeModal()" (confirmPayment)="handlePayment($event)" (tryAgain)="handleTryAgaing()"></app-modal>
+<app-modal-payment [isOpen]="isModalOpen" [totalPrice]="totalPrice()" [change]="change" [error]="error"
+  (closeModal)="closeModal()" (confirmPayment)="handlePayment($event)"
+  (tryAgain)="handleTryAgaing()"></app-modal-payment>
