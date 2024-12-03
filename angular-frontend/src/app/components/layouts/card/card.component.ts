@@ -14,6 +14,7 @@ export class CardComponent {
   @Output() deletedCard: EventEmitter<string> = new EventEmitter();
 
   @Input() showAddButton: boolean = true;
+  @Input() showEditButton: boolean = false;
   @Input() product: Product = {
     id: -1,
     name: '',

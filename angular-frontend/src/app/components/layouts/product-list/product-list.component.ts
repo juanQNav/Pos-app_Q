@@ -14,6 +14,7 @@ import { ProductListService } from '../../../services/product-list.service';
 })
 export class ProductListComponent {
   @Input() showAddButton: boolean = true;
+  @Input() showEditButton: boolean = false;
   @Input() xlCols: number = 5;
 
   private productListService = inject(ProductListService);
