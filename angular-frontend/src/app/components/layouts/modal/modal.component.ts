@@ -23,8 +23,6 @@ export class ModalComponent {
 
   handleConfirm(): void {
     this.confirmPayment.emit(this.paymentAmount);
-    console.log("change modal: ", this.change);
-    console.log("error modal: ", this.error);
   }
 
   handleClose(): void {
@@ -34,7 +32,6 @@ export class ModalComponent {
   }
 
   handleTryAgain(): void {
-    console.log("Reiniciando intento...");
     this.error = null;
     this.tryAgain.emit();
   }

@@ -1,6 +1,4 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Importar para ngFor
-import { FormsModule } from '@angular/forms'; // Importar para ngModel
 import { Product } from '../../../interfaces/product.interface';
 import { ShoppingCartService } from '../../../services/shopping-cart.service';
 import { Subscription } from 'rxjs';
@@ -9,7 +7,7 @@ import { ModalComponent } from '../modal/modal.component';
 @Component({
   selector: 'app-shopping-cart',
   standalone: true,
-  imports: [CommonModule, FormsModule, ModalComponent], // Agregar CommonModule y FormsModule
+  imports: [ModalComponent],
   templateUrl: './shopping-cart.component.html',
   styleUrl: './shopping-cart.component.css'
 })
@@ -22,7 +20,7 @@ export class ShoppingCartComponent implements OnInit {
   paymentAmount: number = 0;
   totalPriceValue: number = 0;
   change: number | null = null;
-  error: string | null = null; // Definimos la propiedad error
+  error: string | null = null;
 
   constructor() {
     this.productsSubscription = this.shoppingCartService.products.subscribe(
@@ -74,9 +72,7 @@ export class ShoppingCartComponent implements OnInit {
     if (paymentAmount >= this.totalPrice()) {
       this.change = paymentAmount - this.totalPrice();
       this.error = null;
-      console.log("paymentAmount: ", paymentAmount);
     } else {
-      console.log("paymentAmount: ", paymentAmount);
       this.error = 'El monto ingresado es insuficiente. Por favor, ingrese una cantidad válida.';
       this.change = null;
     }
