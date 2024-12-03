@@ -30,7 +30,6 @@ export class ProductListService {
       {
         next: (response) => {
           this._products = response;
-          console.log(response);
         },
         error: (error) => {
           console.log(error);
