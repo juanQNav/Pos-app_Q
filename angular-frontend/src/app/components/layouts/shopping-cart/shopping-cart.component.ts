@@ -2,12 +2,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Product } from '../../../interfaces/product.interface';
 import { ShoppingCartService } from '../../../services/shopping-cart.service';
 import { Subscription } from 'rxjs';
-import { ModalComponent } from '../modal/modal.component';
+import { ModalPaymentComponent } from '../modal-payment/modal-payment.component';
 
 @Component({
   selector: 'app-shopping-cart',
   standalone: true,
-  imports: [ModalComponent],
+  imports: [ModalPaymentComponent],
   templateUrl: './shopping-cart.component.html',
   styleUrl: './shopping-cart.component.css'
 })

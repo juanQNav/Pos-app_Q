@@ -6,10 +6,10 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-modal',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css'],
+  templateUrl: './modal-payment.component.html',
+  styleUrls: ['./modal-payment.component.css'],
 })
-export class ModalComponent {
+export class ModalPaymentComponent {
   @Input() isOpen: boolean = false;
   @Input() totalPrice: number = 0;
   @Input() change: number | null = null;
