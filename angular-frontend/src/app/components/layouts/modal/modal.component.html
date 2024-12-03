@@ -1,0 +1,37 @@
+<div *ngIf="isOpen" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="bg-white rounded-lg p-6 w-96">
+        <!-- form -->
+        @if(error === null && change === null){
+        <h3 class="text-lg font-semibold mb-4">Confirmar Compra</h3>
+        <p class="mb-4">Monto total: <strong>${{ totalPrice }}</strong></p>
+        <label for="paymentAmount" class="block text-sm font-medium mb-2">Ingrese el monto a pagar:</label>
+        <input id="paymentAmount" type="number" [(ngModel)]="paymentAmount" class="w-full border p-2 rounded mb-4" />
+        <div class="flex justify-end space-x-2">
+            <button (click)="handleClose()" class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400">Cancelar</button>
+            <button (click)="handleConfirm()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                Confirmar
+            </button>
+        </div>
+        }
+        <!-- show change -->
+        @else if(change !== null){
+        <h3 class="text-lg font-semibold mb-4">Compra Confirmada</h3>
+        <p class="mb-4">Su cambio es: <strong>${{ change }}</strong></p>
+        <div class="flex justify-end">
+            <button (click)="handleClose()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                Cerrar
+            </button>
+        </div>
+        }
+        <!-- show error -->
+        @else if (error !== null){
+        <h3 class="text-lg font-semibold mb-4 text-red-600">Error</h3>
+        <p class="mb-4">{{ error }}</p>
+        <div class="flex justify-end">
+            <button (click)="handleTryAgain()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                Volver a intentar
+            </button>
+        </div>
+        }
+    </div>
+</div>
