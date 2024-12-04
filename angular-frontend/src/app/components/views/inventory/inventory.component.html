@@ -1,7 +1,7 @@
 <div class="flex flex-col justify-center items-center mt-5 mb-5 bg-gray-100">
     <h1 class="text-center font-medium text-gray-700 text-sm sm:text-sm md:text-lg lg:text-lg truncate">Inventario
     </h1>
-    <button
+    <button (click)="openCreateModal()"
         class="mt-2 mb-2 text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm sm:text-sm md:text-lg lg:text-base px-4 sm:px-3 md:px-7 py-2 sm:py-2.5 me-2">
         Crear producto +</button>
 </div>
@@ -10,5 +10,5 @@
         <app-product-list [xlCols]="7" [showAddButton]="false" [showEditButton]="true"></app-product-list>
     </div>
 </div>
-<app-modal-edit-product [isOpen]="isOpen" [product]="selectedProduct"
+<app-modal-edit-product [isOpen]="isOpen" [product]="selectedProduct" [isCreating]="isCreating"
     (eventCloseModal)="closeModal($event)"></app-modal-edit-product>

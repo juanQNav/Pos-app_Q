@@ -58,4 +58,14 @@ export class ProductListService {
     }
     this.productsSubject.next(this._products);
   }
+
+  public createProduct(product: Product) {
+    const url = this.apiUrl;
+    return this.http.post<Product>(url, product, {
+      headers: {
+        "Authorization": this.authService.getToken(),
+      }
+    });
+  }
+
 }

@@ -13,17 +13,20 @@ import { ProductListService } from '../../../services/product-list.service';
 })
 export class ModalEditProductComponent {
   @Input() isOpen: boolean = false;
-  @Output() eventCloseModal: EventEmitter<boolean> = new EventEmitter();
+  @Input() isCreating: boolean = false;
   @Input() product: Product = {
     _id: '',
     id: -1,
     name: '',
-    price: -1,
+    price: 0,
     volume: '',
     image: '',
     container: '',
     material: ''
   };
+  @Output() eventCloseModal: EventEmitter<boolean> = new EventEmitter();
+  @Output() eventSaveProduct: EventEmitter<Product> = new EventEmitter();
+
   public previewUrl: string | null = null;
   public selectedFile: File | null = null;
   public invalidFileType: boolean = false;
@@ -63,6 +66,13 @@ export class ModalEditProductComponent {
       };
       reader.readAsDataURL(file);
     }
+  }
+
+  public onCreateProduct(): void {
+    this.eventSaveProduct.emit(this.editedProduct);
+    this.closeModal();
+    console.log("Product to create: ", this.editedProduct);
+    console.log("isCreating: ", this.isCreating);
   }
 
   public onSubmit(): void {

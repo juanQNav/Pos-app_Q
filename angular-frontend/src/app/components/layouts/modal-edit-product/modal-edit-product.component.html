@@ -1,6 +1,8 @@
 <div *ngIf="isOpen" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
     <div class="bg-white rounded-lg p-6 w-96 shadow-lg">
-        <h2 class="text-lg font-bold text-gray-800 mb-4">Editar Producto</h2>
+        <h2 class="text-lg font-bold text-gray-800 mb-4">
+            {{ isCreating? 'Crear Producto' : 'Editar Producto' }}
+        </h2>
         <form>
             <!-- Imagen -->
             <div class="mb-4">
@@ -51,7 +53,7 @@
                     class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500">
                     Cancelar
                 </button>
-                <button type="button" (click)="onSubmit()"
+                <button type="button" (click)="isCreating ? onSubmit() : onCreateProduct()"
                     class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     Guardar
                 </button>
