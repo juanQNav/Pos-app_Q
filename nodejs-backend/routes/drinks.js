@@ -9,7 +9,7 @@ router.get("/", [validateJWT], getAllDrinks);
 
 router.get("/:id", [validateJWT, verifyAdminRole], getDrinkById)
 
-router.post("/", [validateJWT], createNewDrink);
+router.post("/", [validateJWT, verifyAdminRole, upload.single('image')], createNewDrink);
 
 router.delete("/:id", [validateJWT], deleteDrinkById);
 

@@ -37,28 +37,38 @@ const getDrinkById = async (req = request, res = response) => {
     }
 }
 
-const createNewDrink = async (req = request, res = response) => {
-    const { id, name, price, volume, image, container, material } = req.body;
-    const drinkData = { id, name, price, volume, image, container, material };
+const createNewDrink = async (req, res) => {
+    const { name, price, volume, container, material } = req.body;
+    const newProductData = { name, price, volume, container, material };
 
-    if (!id || !name || !price || !volume || !image || !container || !material) {
+    if (!name || !price || !volume || !container || !material) {
         return res.status(400).json({
             message: "Incomplete data",
         });
     }
 
     try {
-        const savedDrink = await DrinksRespository.create(drinkData);
+        const newDrink = await DrinksRespository.create(newProductData);
+
+        if (req.file) {
+            const imagePath = path.join(__dirname, '../../angular-frontend/public/images/products', `${newDrink._id}${path.extname(req.file.originalname)}`);
+
+            fs.renameSync(req.file.path, imagePath);
+
+            newDrink.image = `images/products/${newDrink._id}${path.extname(req.file.originalname)}`;
+            await newDrink.save();
+        }
         res.status(201).json({
-            savedDrink
+            message: "Drink created successfully",
+            drink: newDrink,
         });
     } catch (error) {
-        console.log(error);
+        console.error(error);
         res.status(500).json({
-            message: "Error add new element"
-        })
+            message: "Error creating drink",
+        });
     }
-}
+};
 
 const deleteDrinkById = async (req = request, res = response) => {
     const { id } = req.params;
