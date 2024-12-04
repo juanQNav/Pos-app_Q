@@ -3,3 +3,5 @@
         <app-product-list [xlCols]="7" [showAddButton]="false" [showEditButton]="true"></app-product-list>
     </div>
 </div>
+<app-modal-edit-product [isOpen]="isOpen" [product]="selectedProduct"
+    (eventCloseModal)="closeModal($event)"></app-modal-edit-product>

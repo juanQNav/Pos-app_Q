@@ -1,0 +1,61 @@
+<div *ngIf="isOpen" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="bg-white rounded-lg p-6 w-96 shadow-lg">
+        <h2 class="text-lg font-bold text-gray-800 mb-4">Editar Producto</h2>
+        <form>
+            <!-- Imagen -->
+            <div class="mb-4">
+                <label for="image" class="block text-sm font-medium text-gray-700">Imagen del Producto</label>
+                <div class="flex items-center">
+                    <img *ngIf="previewUrl || product.image" [src]="previewUrl || product.image" alt="Producto"
+                        class="h-24 w-24 rounded-md border border-gray-300 mr-4">
+                    <input id="image" type="file" (change)="onFileSelected($event)"
+                        class="mt-1 block w-full text-sm text-gray-700">
+                </div>
+                <p *ngIf="invalidFileType" class="text-red-500 text-sm mt-2">
+                    Por favor, selecciona una imagen en formato PNG o JPG.
+                </p>
+            </div>
+            <!-- Name -->
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
+                <input id="name" type="text" [(ngModel)]="product.name" name="name"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+            </div>
+            <!-- Price -->
+            <div class="mb-4">
+                <label for="price" class="block text-sm font-medium text-gray-700">Precio</label>
+                <input id="price" type="number" [(ngModel)]="product.price" name="price"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+            </div>
+            <!-- Volume -->
+            <div class="mb-4">
+                <label for="volume" class="block text-sm font-medium text-gray-700">Volumen</label>
+                <input id="volume" type="text" [(ngModel)]="product.volume" name="volume"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+            </div>
+            <!-- Container -->
+            <div class="mb-4">
+                <label for="container" class="block text-sm font-medium text-gray-700">Contenedor</label>
+                <input id="container" type="text" [(ngModel)]="product.container" name="container"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+            </div>
+            <!-- Material -->
+            <div class="mb-4">
+                <label for="material" class="block text-sm font-medium text-gray-700">Material</label>
+                <input id="material" type="text" [(ngModel)]="product.material" name="material"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+            </div>
+            <!-- Buttons -->
+            <div class="flex justify-end space-x-4">
+                <button type="button" (click)="closeModal()"
+                    class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                    Cancelar
+                </button>
+                <button type="button" (click)="onSubmit()"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    Guardar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Product } from '../../../interfaces/product.interface';
 import { ShoppingCartService } from '../../../services/shopping-cart.service';
+import { EventEditProductService } from '../../../services/event-edit-product.service';
 
 @Component({
   selector: 'app-card',
@@ -24,8 +25,15 @@ export class CardComponent {
     container: '',
     material: ''
   }
+  private modal_state = false;
 
-  constructor(private shoppingCartService: ShoppingCartService) { }
+  constructor(private shoppingCartService: ShoppingCartService, private evtSvc: EventEditProductService) { }
+
+  onClick() {
+    this.modal_state = !this.modal_state;
+    this.evtSvc.emitModalStateEvent(true);
+    this.evtSvc.emitSelectedProduct(this.product);
+  }
 
   public onDeletedCard(): void {
     this.deletedCard.emit(this.product.name);
