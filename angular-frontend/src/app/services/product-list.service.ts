@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { Product } from '../interfaces/product.interface';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,8 @@ export class ProductListService {
   private apiUrl = "http://localhost:8080/api/drinks/";
   private _products: Product[] = [];
 
+  private productsSubject = new BehaviorSubject<Product[]>([]);
+  public products$ = this.productsSubject.asObservable();
 
   public get products(): Product[] {
     return this._products;
@@ -19,6 +22,7 @@ export class ProductListService {
 
   public deleteElement(name: string) {
     this._products = this._products.filter(product => product.name !== name);
+    this.productsSubject.next(this._products);
   }
 
   public fetchProducts() {
@@ -30,6 +34,7 @@ export class ProductListService {
       {
         next: (response) => {
           this._products = response;
+          this.productsSubject.next(this._products);
         },
         error: (error) => {
           console.log(error);
@@ -51,5 +56,6 @@ export class ProductListService {
     if (index !== -1) {
       this._products[index] = updatedProduct;
     }
+    this.productsSubject.next(this._products);
   }
 }

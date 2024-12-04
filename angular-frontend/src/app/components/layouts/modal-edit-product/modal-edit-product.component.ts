@@ -14,7 +14,6 @@ import { ProductListService } from '../../../services/product-list.service';
 export class ModalEditProductComponent {
   @Input() isOpen: boolean = false;
   @Output() eventCloseModal: EventEmitter<boolean> = new EventEmitter();
-  @Output() save: EventEmitter<Product> = new EventEmitter();
   @Input() product: Product = {
     _id: '',
     id: -1,
@@ -74,7 +73,6 @@ export class ModalEditProductComponent {
     formData.append('volume', this.editedProduct.volume);
     formData.append('container', this.editedProduct.container);
     formData.append('material', this.editedProduct.material);
-
     formData.append('oldImage', this.editedProduct.image);
 
     if (this.selectedFile) {
@@ -85,6 +83,7 @@ export class ModalEditProductComponent {
       next: (updatedProduct) => {
         console.log("Product updated successfully", updatedProduct);
         this.productListService.updateLocalProduct(updatedProduct);
+        this.productListService.fetchProducts();
         this.closeModal();
       },
       error: (error) => {

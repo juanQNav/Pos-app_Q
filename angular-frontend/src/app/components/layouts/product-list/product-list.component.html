@@ -2,7 +2,7 @@
         '2xl:grid-cols-5': xlCols === 5,
         '2xl:grid-cols-7': xlCols === 7
     }">
-    @for(product of products; track product.id){
+    @for(product of (products$ | async); track product.id){
     <app-card [product]="product" [showAddButton]="showAddButton" [showEditButton]="showEditButton"></app-card>
     }
 </div>
