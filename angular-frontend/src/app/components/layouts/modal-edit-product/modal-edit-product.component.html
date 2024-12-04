@@ -6,8 +6,8 @@
             <div class="mb-4">
                 <label for="image" class="block text-sm font-medium text-gray-700">Imagen del Producto</label>
                 <div class="flex items-center">
-                    <img *ngIf="previewUrl || product.image" [src]="previewUrl || product.image" alt="Producto"
-                        class="h-24 w-24 rounded-md border border-gray-300 mr-4">
+                    <img *ngIf="previewUrl || editedProduct.image" [src]="previewUrl || editedProduct.image"
+                        alt="Producto" class="h-24 w-24 rounded-md border border-gray-300 mr-4">
                     <input id="image" type="file" (change)="onFileSelected($event)"
                         class="mt-1 block w-full text-sm text-gray-700">
                 </div>
@@ -18,31 +18,31 @@
             <!-- Name -->
             <div class="mb-4">
                 <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
-                <input id="name" type="text" [(ngModel)]="product.name" name="name"
+                <input id="name" type="text" [(ngModel)]="editedProduct.name" name="name"
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
             </div>
             <!-- Price -->
             <div class="mb-4">
                 <label for="price" class="block text-sm font-medium text-gray-700">Precio</label>
-                <input id="price" type="number" [(ngModel)]="product.price" name="price"
+                <input id="price" type="number" [(ngModel)]="editedProduct.price" name="price"
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
             </div>
             <!-- Volume -->
             <div class="mb-4">
                 <label for="volume" class="block text-sm font-medium text-gray-700">Volumen</label>
-                <input id="volume" type="text" [(ngModel)]="product.volume" name="volume"
+                <input id="volume" type="text" [(ngModel)]="editedProduct.volume" name="volume"
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
             </div>
             <!-- Container -->
             <div class="mb-4">
                 <label for="container" class="block text-sm font-medium text-gray-700">Contenedor</label>
-                <input id="container" type="text" [(ngModel)]="product.container" name="container"
+                <input id="container" type="text" [(ngModel)]="editedProduct.container" name="container"
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
             </div>
             <!-- Material -->
             <div class="mb-4">
                 <label for="material" class="block text-sm font-medium text-gray-700">Material</label>
-                <input id="material" type="text" [(ngModel)]="product.material" name="material"
+                <input id="material" type="text" [(ngModel)]="editedProduct.material" name="material"
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
             </div>
             <!-- Buttons -->

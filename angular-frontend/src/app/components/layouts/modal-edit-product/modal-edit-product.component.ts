@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Product } from '../../../interfaces/product.interface';
@@ -29,7 +29,15 @@ export class ModalEditProductComponent {
   public selectedFile: File | null = null;
   public invalidFileType: boolean = false;
 
+  public editedProduct: Product = { ...this.product };
+
   constructor(private productListService: ProductListService) { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['product'] && this.product) {
+      this.editedProduct = { ...this.product };
+    }
+  }
 
   public closeModal(): void {
     this.isOpen = false;
@@ -61,13 +69,13 @@ export class ModalEditProductComponent {
   public onSubmit(): void {
     const formData = new FormData();
 
-    formData.append('name', this.product.name);
-    formData.append('price', this.product.price.toString());
-    formData.append('volume', this.product.volume);
-    formData.append('container', this.product.container);
-    formData.append('material', this.product.material);
+    formData.append('name', this.editedProduct.name);
+    formData.append('price', this.editedProduct.price.toString());
+    formData.append('volume', this.editedProduct.volume);
+    formData.append('container', this.editedProduct.container);
+    formData.append('material', this.editedProduct.material);
 
-    formData.append('oldImage', this.product.image);
+    formData.append('oldImage', this.editedProduct.image);
 
     if (this.selectedFile) {
       formData.append('image', this.selectedFile, this.selectedFile.name);
@@ -84,5 +92,4 @@ export class ModalEditProductComponent {
       }
     });
   }
-
 }
