@@ -59,13 +59,12 @@ export class ProductListService {
     this.productsSubject.next(this._products);
   }
 
-  public createProduct(product: Product) {
+  public createProduct(formData: FormData) {
     const url = this.apiUrl;
-    return this.http.post<Product>(url, product, {
+    return this.http.post<Product>(url, formData, {
       headers: {
         "Authorization": this.authService.getToken(),
       }
     });
   }
-
 }

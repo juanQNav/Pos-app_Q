@@ -68,16 +68,8 @@ export class ModalEditProductComponent {
     }
   }
 
-  public onCreateProduct(): void {
-    this.eventSaveProduct.emit(this.editedProduct);
-    this.closeModal();
-    console.log("Product to create: ", this.editedProduct);
-    console.log("isCreating: ", this.isCreating);
-  }
-
-  public onSubmit(): void {
+  public onUpdateProduct(): void {
     const formData = new FormData();
-
     formData.append('name', this.editedProduct.name);
     formData.append('price', this.editedProduct.price.toString());
     formData.append('volume', this.editedProduct.volume);
@@ -91,14 +83,40 @@ export class ModalEditProductComponent {
 
     this.productListService.updateProductWithImage(this.product._id, formData).subscribe({
       next: (updatedProduct) => {
-        console.log("Product updated successfully", updatedProduct);
+        console.log("Producto actualizado exitosamente", updatedProduct);
         this.productListService.updateLocalProduct(updatedProduct);
         this.productListService.fetchProducts();
         this.closeModal();
       },
       error: (error) => {
-        console.error("Error updating product", error);
+        console.error("Error al actualizar el producto", error);
       }
     });
   }
+
+  public onSubmit(): void {
+    const formData = new FormData();
+    formData.append('id', '1');
+    formData.append('name', this.editedProduct.name);
+    formData.append('price', this.editedProduct.price.toString());
+    formData.append('volume', this.editedProduct.volume);
+    formData.append('container', this.editedProduct.container);
+    formData.append('material', this.editedProduct.material);
+
+    if (this.selectedFile) {
+      formData.append('image', this.selectedFile, this.selectedFile.name);
+    }
+
+    this.productListService.createProduct(formData).subscribe({
+      next: (newProduct) => {
+        console.log("Producto creado exitosamente", newProduct);
+        this.productListService.fetchProducts();
+        this.closeModal();
+      },
+      error: (error) => {
+        console.error("Error al crear el producto", error);
+      }
+    });
+  }
+
 }

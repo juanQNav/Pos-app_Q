@@ -59,14 +59,4 @@ export class InventoryComponent {
   public closeModal(state: boolean) {
     this.isOpen = state;
   }
-
-  public saveProduct(product: Product) {
-    if (this.isCreating) {
-      this.productListService.createProduct(product).subscribe({
-        next: () => this.productListService.fetchProducts(),
-        error: (err) => console.error(err),
-      });
-    }
-    this.closeModal(false);
-  }
 }
