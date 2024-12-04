@@ -1,5 +1,7 @@
 const { response, request } = require('express');
 const { DrinksRespository: DrinksRespository } = require('../repositories/drinks');
+const fs = require('fs');
+const path = require('path');
 
 const getAllDrinks = async (req = request, res = response) => {
     const { searchTerm } = req.query;
@@ -79,12 +81,24 @@ const deleteDrinkById = async (req = request, res = response) => {
         })
     }
 }
+
 const updateDrinkById = async (req = request, res = response) => {
     const { id } = req.params;
-    const { name, price, volume, image, container, material } = req.body;
-    const updateData = { name, price, volume, image, container, material };
+    const { name, price, volume, container, material } = req.body;
+    const updateData = { name, price, volume, container, material };
 
-    if (!name || !price || !volume || !image || !container || !material) {
+    if (req.file) {
+        const oldImagePath = path.join(__dirname, '../../angular-frontend/public', req.body.oldImage);
+        const newImagePath = path.join(__dirname, '../../angular-frontend/public/images/products', `${id}${path.extname(req.file.originalname)}`);
+
+        if (oldImagePath !== newImagePath && fs.existsSync(oldImagePath)) {
+            fs.unlinkSync(oldImagePath);
+        }
+
+        updateData.image = `images/products/${id}${path.extname(req.file.originalname)}`;
+    }
+
+    if (!name || !price || !volume || !container || !material) {
         return res.status(400).json({
             message: "Incomplete data",
         });
@@ -99,7 +113,8 @@ const updateDrinkById = async (req = request, res = response) => {
             return;
         }
         res.status(200).json({
-            message: "Drink updated"
+            message: "Drink updated",
+            drink: updateData
         });
     } catch (error) {
         console.log(error);
@@ -108,6 +123,7 @@ const updateDrinkById = async (req = request, res = response) => {
         })
     }
 }
+
 
 module.exports = {
     getAllDrinks,

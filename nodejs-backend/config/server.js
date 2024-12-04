@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./database');
+const path = require('path');
 
 class Server {
     constructor() {
@@ -17,18 +18,19 @@ class Server {
         this.drinksPath = "/api/drinks";
         this.authPath = "/api/auth";
 
-
         this.middlewares(); //before routes
         this.routes();
         connectDB();
     }
-
 
     routes() {
         //main routes
         this.app.use(this.drinksPath, require('../routes/drinks'));
         this.app.use(this.usersPath, require('../routes/users'));
         this.app.use(this.authPath, require('../routes/auth'));
+
+        // Serve static files from angular-frontend
+        this.app.use(express.static(path.join(__dirname, '../../angular-frontend/public')));
 
         //errors
         this.app.get('*', function (req, res) {

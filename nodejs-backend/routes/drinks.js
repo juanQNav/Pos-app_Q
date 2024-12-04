@@ -1,10 +1,9 @@
 const { Router } = require("express");
-const { Server } = require("http");
 const { getAllDrinks, createNewDrink, getDrinkById, deleteDrinkById, updateDrinkById } = require("../controllers/drinks");
-const { create } = require("domain");
 const { validateJWT } = require("../middlewares/verifyJWT");
 const { verifyAdminRole } = require("../middlewares/verifyAdminRole");
 const router = Router();
+const upload = require('../config/multer');
 
 router.get("/", [validateJWT], getAllDrinks);
 
@@ -14,6 +13,6 @@ router.post("/", [validateJWT], createNewDrink);
 
 router.delete("/:id", [validateJWT], deleteDrinkById);
 
-router.put("/:id", [validateJWT], updateDrinkById);
+router.put("/:id", [validateJWT], upload.single('image'), updateDrinkById);
 
 module.exports = router;
