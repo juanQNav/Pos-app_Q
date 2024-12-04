@@ -36,4 +36,20 @@ export class ProductListService {
         }
       })
   }
+
+  public updateProductWithImage(_id: string, formData: FormData) {
+    const url = `${this.apiUrl}${_id}`;
+    return this.http.put<Product>(url, formData, {
+      headers: {
+        "Authorization": this.authService.getToken(),
+      }
+    });
+  }
+
+  public updateLocalProduct(updatedProduct: Product): void {
+    const index = this._products.findIndex(p => p._id === updatedProduct._id);
+    if (index !== -1) {
+      this._products[index] = updatedProduct;
+    }
+  }
 }

@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Product } from '../../../interfaces/product.interface';
+import { ProductListService } from '../../../services/product-list.service';
 
 @Component({
   selector: 'app-modal-edit-product',
@@ -12,7 +13,10 @@ import { Product } from '../../../interfaces/product.interface';
 })
 export class ModalEditProductComponent {
   @Input() isOpen: boolean = false;
+  @Output() eventCloseModal: EventEmitter<boolean> = new EventEmitter();
+  @Output() save: EventEmitter<Product> = new EventEmitter();
   @Input() product: Product = {
+    _id: '',
     id: -1,
     name: '',
     price: -1,
@@ -21,12 +25,11 @@ export class ModalEditProductComponent {
     container: '',
     material: ''
   };
-  @Output() eventCloseModal: EventEmitter<boolean> = new EventEmitter();
-  @Output() save: EventEmitter<Product> = new EventEmitter();
-
   public previewUrl: string | null = null;
-  private selectedFile: File | null = null;
+  public selectedFile: File | null = null;
   public invalidFileType: boolean = false;
+
+  constructor(private productListService: ProductListService) { }
 
   public closeModal(): void {
     this.isOpen = false;
@@ -56,9 +59,30 @@ export class ModalEditProductComponent {
   }
 
   public onSubmit(): void {
+    const formData = new FormData();
+
+    formData.append('name', this.product.name);
+    formData.append('price', this.product.price.toString());
+    formData.append('volume', this.product.volume);
+    formData.append('container', this.product.container);
+    formData.append('material', this.product.material);
+
+    formData.append('oldImage', this.product.image);
+
     if (this.selectedFile) {
-      this.product.image = `/images/products/${this.selectedFile.name}`;
+      formData.append('image', this.selectedFile, this.selectedFile.name);
     }
-    this.closeModal();
+
+    this.productListService.updateProductWithImage(this.product._id, formData).subscribe({
+      next: (updatedProduct) => {
+        console.log("Product updated successfully", updatedProduct);
+        this.productListService.updateLocalProduct(updatedProduct);
+        this.closeModal();
+      },
+      error: (error) => {
+        console.error("Error updating product", error);
+      }
+    });
   }
+
 }

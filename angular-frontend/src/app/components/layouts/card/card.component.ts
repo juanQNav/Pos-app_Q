@@ -17,6 +17,7 @@ export class CardComponent {
   @Input() showAddButton: boolean = true;
   @Input() showEditButton: boolean = false;
   @Input() product: Product = {
+    _id: '',
     id: -1,
     name: '',
     price: -1,

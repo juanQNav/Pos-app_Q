@@ -3,6 +3,7 @@ import { ProductListComponent } from '../../layouts/product-list/product-list.co
 import { EventEditProductService } from '../../../services/event-edit-product.service';
 import { ModalEditProductComponent } from "../../layouts/modal-edit-product/modal-edit-product.component";
 import { Product } from '../../../interfaces/product.interface';
+import { ProductListService } from '../../../services/product-list.service';
 
 @Component({
   selector: 'app-inventory',
@@ -14,6 +15,7 @@ import { Product } from '../../../interfaces/product.interface';
 export class InventoryComponent {
   @Input() isOpen: boolean = false;
   public selectedProduct: Product = {
+    _id: '',
     id: -1,
     name: '',
     price: -1,
