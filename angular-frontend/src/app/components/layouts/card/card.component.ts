@@ -48,6 +48,7 @@ export class CardComponent {
     setTimeout(() => {
       this.imageUrl = this.getImageUrl(this.product.image);
       this.cdr.detectChanges();
+      this.cdr.markForCheck();
     }, 0);
   }
 
