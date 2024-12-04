@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectorRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Product } from '../../../interfaces/product.interface';
 import { ShoppingCartService } from '../../../services/shopping-cart.service';
@@ -7,9 +7,9 @@ import { EventEditProductService } from '../../../services/event-edit-product.se
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [RouterLink,],
+  imports: [RouterLink],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.css'
+  styleUrls: ['./card.component.css']
 })
 export class CardComponent {
   @Output() deletedCard: EventEmitter<string> = new EventEmitter();
@@ -25,12 +25,33 @@ export class CardComponent {
     image: '',
     container: '',
     material: ''
-  }
+  };
+
   private modal_state = false;
+  imageUrl: string = '';
 
-  constructor(private shoppingCartService: ShoppingCartService, private evtSvc: EventEditProductService) { }
+  constructor(
+    private shoppingCartService: ShoppingCartService,
+    private evtSvc: EventEditProductService,
+    private cdr: ChangeDetectorRef
+  ) { }
 
-  onClick() {
+  ngOnInit(): void {
+    this.imageUrl = this.getImageUrl(this.product.image);
+  }
+
+  private getImageUrl(imageUrl: string): string {
+    return `${imageUrl}?t=${new Date().getTime()}`;
+  }
+
+  ngOnChanges(): void {
+    setTimeout(() => {
+      this.imageUrl = this.getImageUrl(this.product.image);
+      this.cdr.detectChanges();
+    }, 0);
+  }
+
+  public onClick() {
     this.modal_state = !this.modal_state;
     this.evtSvc.emitModalStateEvent(true);
     this.evtSvc.emitSelectedProduct(this.product);
