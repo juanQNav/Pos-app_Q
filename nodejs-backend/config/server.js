@@ -17,6 +17,7 @@ class Server {
         this.usersPath = "/api/users";
         this.drinksPath = "/api/drinks";
         this.authPath = "/api/auth";
+        this.salesPath = "/api/sales";
 
         this.middlewares(); //before routes
         this.routes();
@@ -25,6 +26,7 @@ class Server {
 
     routes() {
         //main routes
+        this.app.use(this.salesPath, require('../routes/sales'));
         this.app.use(this.drinksPath, require('../routes/drinks'));
         this.app.use(this.usersPath, require('../routes/users'));
         this.app.use(this.authPath, require('../routes/auth'));
